@@ -1,16 +1,17 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
-import { Logos } from "@/components/Logos";
-import { Problem } from "@/components/Problem";
-import { Products } from "@/components/Products";
-import { HowItWorks } from "@/components/HowItWorks";
 import { Stats } from "@/components/Stats";
-import { Courses } from "@/components/Courses";
-import { UseCases } from "@/components/UseCases";
-import { Video } from "@/components/Video";
-import { Testimonials } from "@/components/Testimonials";
+import { Problem } from "@/components/Problem";
+import { Solution } from "@/components/Solution";
+import { HowItWorks } from "@/components/HowItWorks";
+import { WhatsInside } from "@/components/WhatsInside";
+import { WhatYouReceive } from "@/components/WhatYouReceive";
+import { Bonuses } from "@/components/Bonuses";
+import { WhoIsThisFor } from "@/components/WhoIsThisFor";
 import { Comparison } from "@/components/Comparison";
 import { Pricing } from "@/components/Pricing";
+import { SkoolCommunity } from "@/components/SkoolCommunity";
+import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -20,17 +21,18 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
-      <Logos />
-      <Problem />
-      <Products />
-      <HowItWorks />
       <Stats />
-      <Courses />
-      <UseCases />
-      <Video />
-      <Testimonials />
+      <Problem />
+      <Solution />
+      <HowItWorks />
+      <WhatsInside />
+      <WhatYouReceive />
+      <Bonuses />
+      <WhoIsThisFor />
       <Comparison />
       <Pricing />
+      <SkoolCommunity />
+      <Testimonials />
       <FAQ />
       <FinalCTA />
       <Footer />

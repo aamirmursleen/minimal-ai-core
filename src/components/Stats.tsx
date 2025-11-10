@@ -29,12 +29,12 @@ const AnimatedNumber = ({ value }: { value: string }) => {
 
 export const Stats = () => {
   const stats = [
-    { value: "20+", label: "hours saved per week" },
-    { value: "10,000+", label: "users" },
-    { value: "500+", label: "workflows" },
-    { value: "98%", label: "satisfaction" }
+    { value: "7000+", label: "Ready Workflows", emphasized: false },
+    { value: "50+", label: "Make.com Scenarios", emphasized: false },
+    { value: "847+", label: "Happy Customers", emphasized: false },
+    { value: "96%", label: "Discount Today", emphasized: true }
   ];
-  
+
   return (
     <section className="section-padding px-6 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
@@ -48,7 +48,7 @@ export const Stats = () => {
               transition={{ delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-semibold mb-2">
+              <div className={`text-4xl md:text-5xl font-semibold mb-2 ${stat.emphasized ? 'text-accent' : ''}`}>
                 {stat.value.includes('+') ? (
                   <>
                     <AnimatedNumber value={stat.value} />+

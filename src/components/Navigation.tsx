@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
-import { CartDrawer } from "./CartDrawer";
+import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -11,22 +18,27 @@ export const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="/" className="text-xl font-semibold tracking-tight">
-          We Sell AI
+          AutomateLion
         </a>
-        
+
         <div className="hidden md:flex items-center gap-8">
-          <a href="#products" className="text-sm hover:text-foreground/60 transition-colors">
-            Products
-          </a>
-          <a href="#courses" className="text-sm hover:text-foreground/60 transition-colors">
-            Courses
-          </a>
-          <a href="#pricing" className="text-sm hover:text-foreground/60 transition-colors">
+          <button onClick={() => scrollToSection('problem')} className="text-sm hover:text-foreground/60 transition-colors">
+            The Problem
+          </button>
+          <button onClick={() => scrollToSection('solution')} className="text-sm hover:text-foreground/60 transition-colors">
+            The Solution
+          </button>
+          <button onClick={() => scrollToSection('testimonials')} className="text-sm hover:text-foreground/60 transition-colors">
+            Proof
+          </button>
+          <button onClick={() => scrollToSection('pricing')} className="text-sm hover:text-foreground/60 transition-colors">
             Pricing
-          </a>
+          </button>
         </div>
-        
-        <CartDrawer />
+
+        <Button size="sm" className="bg-accent hover:bg-accent/90" onClick={() => scrollToSection('pricing')}>
+          Get Lifetime Access
+        </Button>
       </div>
     </motion.nav>
   );
