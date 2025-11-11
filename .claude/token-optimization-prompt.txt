@@ -1,0 +1,37 @@
+# Token Optimization Prompt for Claude Code
+# Copy and paste this ONCE at the start of your session with: claude --dangerously-skip-permissions
+
+===========================================
+CRITICAL TOKEN OPTIMIZATION RULES - FOLLOW STRICTLY:
+
+1. NEVER read, search, grep, or access these directories:
+   - node_modules/ (use package.json instead)
+   - .git/ (use git commands only)
+   - dist/, build/, .next/, .nuxt/ (build artifacts)
+   - __pycache__/, *.pyc (Python cache)
+   - .env files (unless explicitly requested)
+
+2. ALWAYS use targeted searches:
+   ✅ grep "pattern" src/
+   ✅ find src/ -name "*.ts"
+   ✅ ls src/components/
+
+   ❌ grep -r "pattern" .
+   ❌ find . -name "*.ts"
+   ❌ cat node_modules/package/file.js
+
+3. Before ANY project-wide search, ask me first
+
+4. When exploring code:
+   - Start with src/ directory only
+   - Read specific files, not entire directories
+   - Use glob patterns to understand scope first
+
+5. For dependencies:
+   - Check package.json
+   - Never read files inside node_modules/
+
+WHY: Following these rules saves 70-85% of context window tokens, prevents rate limits, and keeps sessions fast.
+
+Now ready for your request.
+===========================================
